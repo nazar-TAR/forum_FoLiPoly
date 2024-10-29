@@ -1,0 +1,127 @@
+/* Основні стилі для сторінки */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #6307c5, #0d285a); /* Фіолетово-синій градієнт */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background-attachment: fixed; /* Закріплений фон при скролі */
+}
+
+/* Стилі для заголовка */
+header {
+    background: linear-gradient(to right, #260e39, #391061); /* Градієнт від темно-фіолетового до світло-фіолетового */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Невелика тінь */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 10px 0 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #00bfff; /* Світло-синій при наведенні */
+}
+
+/* Стилі для новин */
+.news-list {
+    margin: 40px auto;
+    max-width: 900px;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Глибша тінь */
+    animation: fadeIn 1s ease; /* Анімація при завантаженні */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.news-item {
+    margin-bottom: 30px;
+}
+
+.news-item h2 {
+    color: #4169e1; /* Синій */
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #4169e1;
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+.news-item h2:hover {
+    color: #8a2be2; /* Фіолетовий при наведенні */
+}
+
+.news-item p {
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 10px;
+    color: #4b0082; /* Фіолетовий */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
+    background-color: #4169e1; /* Синій */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.read-more:hover {
+    background-color: #8a2be2; /* Фіолетовий при наведенні */
+    color: #fff;
+}
+
+/* Стилі для футера */
+footer {
+    background: linear-gradient(to right, #4b0082, #4169e1); /* Фіолетово-синій градієнт */
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Тінь у верхній частині */
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Додаткові стилі для кнопок та посилань */
+button, a {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}

@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Додати статтю</title>
+    <link rel="stylesheet" href={% static "news/css/create.css"%}>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Додати нову статтю</h2>
+        <form method="POST"> <!-- Змініть action на свій URL -->
+            {% csrf_token %}
+            {{ form.title }}<br>
+            {{ form.anons }}<br>
+            {{ form.full_text }}<br>
+            {{ form.date }}<br>
+            <span>{{ error }}</span>
+            <button class="form-group" type="submit">Добавити статтю</button>
+        </form>
+    </div>
+</body>
+</html>
+
+
+
+
+{#<!-- Заголовок статті -->#}
+{#            <div class="form-group">#}
+{#                <label for="title">Заголовок статті:</label>#}
+{#                <input type="text" id="title" name="title" required placeholder="Введіть заголовок"><br>#}
+{#            </div>#}
+{#            <div>#}
+{#                <input type="text" placeholder="Анонс статті" class="form-group"><br>#}
+{#            </div>#}
+{#            <div>#}
+{#                <input type="date" class="form-group"><br>#}
+{#            </div>#}
+{#            <div>#}
+{#                <input type="time" class="form-group"><br>#}
+{#            </div>#}
+{#            <!-- Автор статті -->#}
+{#            <div class="form-group">#}
+{#                <label for="author">Автор:</label>#}
+{#                <input type="text" id="author" name="author" required placeholder="Ваше ім'я"><br>#}
+{#            </div>#}
+{##}
+{#            <!-- Текст статті -->#}
+{#            <div class="form-group">#}
+{#                <label for="content">Текст статті:</label>#}
+{#                <textarea id="content" name="content" rows="10" required placeholder="Напишіть вашу статтю"></textarea><br>#}
+{#            </div>#}
+{##}
+{#            <!-- Категорія статті -->#}
+{#            <div class="form-group">#}
+{#                <label for="category">Категорія:</label>#}
+{#                <select id="category" name="category" required>#}
+{#                    <option value="">Оберіть категорію</option>#}
+{#                    <option value="technology">Технології</option>#}
+{#                    <option value="science">Наука</option>#}
+{#                    <option value="politics">Політика</option>#}
+{#                    <option value="entertainment">Розваги</option>#}
+{#                </select>#}
+{#            </div>#}
+{##}
+{#            <!-- Завантажити зображення -->#}
+{#            <div class="form-group">#}
+{#                <label for="image">Завантажити зображення:</label>#}
+{#                <input type="file" id="image" name="image">#}
+{#            </div>#}
+{##}
+{#            <!-- Кнопка відправки -->#}
+{#            <div class="form-group">#}
+{#                <button type="submit">Додати статтю</button>#}
+{#            </div>#}

@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма реєстрації</title>
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+    <!-- Підключення Google шрифтів -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="registration-form">
+        <h2>Реєстрація</h2>
+        <form action="/submit_registration" method="POST">
+            <input type="text" name="fullname" placeholder="Повне ім'я" required>
+            <input type="email" name="email" placeholder="Електронна пошта" required>
+            <input type="password" name="password" placeholder="Пароль" required>
+            <input type="password" name="confirm_password" placeholder="Підтвердіть пароль" required>
+            <button type="submit">Зареєструватися</button>
+        </form>
+    </div>
+
+</body>
+</html>

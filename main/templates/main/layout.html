@@ -1,0 +1,69 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="{% static 'main/img/logo_1.png' %}" type="image/png">
+    <title>{% block title %} {% endblock %}</title>
+<link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+<style>{% block style %} {% endblock %}</style>
+</head>
+<body>
+        <div class="header-container">
+            <div class="header">
+                <div class="header-logo-container">
+                    <img src="{% static 'main/img/logo_1.png' %}" alt="Logo">
+                    <h3><span>Fo</span><span>Li</span>Poly</h3>
+
+                </div>
+                <div class="navigations-container">
+                    <nav class="header__nav container"  id="nav-burger-page">
+                <li class="header__nav-item"><a href= {%url "about"%}>Modellen</a></li>
+                <li class="header__nav-item"><a href="">Kopen</a></li>
+                <li class="header__nav-item"><a href="">Huren</a></li>
+                <li class="header__nav-item"><a href="">Nieuws</a></li>
+                <li class="header__nav-item"><a class="header__contact" href="">Contact</a></li>
+                
+            </nav>
+            <div class="header__menu" onclick="toggleMenu()">
+                <button class="menu-toggle" id="nav-burger">Menu</button>
+            </div>
+
+                    <div class="search-container">
+                        <form action="/search" method="get">
+                            <input type="text" class="search" placeholder="Search..." name="query" />
+                            <input type="submit" class="submit" value="" />
+                        </form>
+                    </div>
+
+                    <div class="navigations">
+                        
+                    </div>
+                </div>
+                    <div class="header-btn-container">
+                        <a class="sign-in" href={%  url 'signup' %}>sign-in</a>
+                        <a class="sign-in" href={%  url 'signup' %}>log-in</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
+         <script>
+             const button = document.getElementById("nav-burger")
+                const burger_page = document.getElementById("nav-burger-page")
+              function toggleMenu(){
+                    document.body.classList.toggle("lock-scroll");
+                button.classList.toggle('is-active');
+                    burger_page.classList.toggle('burger-page__is-active')
+            
+              };
+
+         </script>
+</body>
+</html>
